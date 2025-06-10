@@ -15,18 +15,18 @@ html, body {
   line-height: 1.4;
 }
 
-/* Background */
+/* Background Image */
 .background {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: url('assets/blur.png') no-repeat center center;
   background-size: cover;
+  z-index: -1;
   opacity: 0;
   animation: fadeIn 2s ease-in-out forwards;
-  z-index: -1;
   filter: blur(0px) brightness(0.85);
 }
 
@@ -36,7 +36,7 @@ html, body {
   }
 }
 
-/* Logo Container */
+/* Main Container */
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -44,14 +44,21 @@ html, body {
   justify-content: center;
   text-align: center;
   height: 100vh;
+  width: 100%;
   padding: 1rem;
   color: #ffffff;
+  animation: riseFadeIn 1.8s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  z-index: 1; /* ⬅️ Critical for showing above background */
+  position: relative;
 }
 
 .logo {
   max-width: 60vw;
   height: auto;
   margin-bottom: 1rem;
+  animation: floatLogo 3s ease-in-out infinite alternate;
 }
 
 h1 {
@@ -63,6 +70,23 @@ h1 {
 .subtext {
   font-size: 4vw;
   opacity: 0.85;
+}
+
+/* Animations */
+@keyframes riseFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatLogo {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-8px);
+  }
 }
 
 /* Responsive Boost */
