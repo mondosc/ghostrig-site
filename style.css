@@ -14,7 +14,6 @@ html, body {
   line-height: 1.4;
 }
 
-
 /* Background Image */
 .background {
   position: fixed;
@@ -36,7 +35,7 @@ html, body {
   }
 }
 
-/* Main Container */
+/* Logo & Text Container */
 .logo-container {
   display: flex;
   flex-direction: column;
@@ -50,7 +49,7 @@ html, body {
   animation: riseFadeIn 1.8s ease-out 0.5s forwards;
   opacity: 0;
   transform: translateY(30px);
-  z-index: 1; /* ⬅️ Critical for showing above background */
+  z-index: 1;
   position: relative;
 }
 
@@ -94,9 +93,11 @@ h1 {
   h1 {
     font-size: 2rem;
   }
+
   .subtext {
     font-size: 1.25rem;
   }
+
   .logo {
     max-width: 200px;
   }
